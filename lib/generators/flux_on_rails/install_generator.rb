@@ -13,6 +13,7 @@ module FluxOnRails
         add_react_form_builder
         add_flux_dispatcher
         add_flux_dirs
+        add_tasks
       end
 
       private
@@ -40,6 +41,9 @@ module FluxOnRails
         directory 'actions', 'app/assets/javascripts/actions'
         directory 'constants', 'app/assets/javascripts/constants'
         directory 'dispatchers', 'app/assets/javascripts/dispatchers'
+      end
+      def add_tasks
+        copy_file 'tasks/react_tasks.rake', 'lib/tasks/react_tasks.rake'
       end
     end
   end
