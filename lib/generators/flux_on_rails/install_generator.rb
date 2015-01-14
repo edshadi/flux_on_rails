@@ -23,8 +23,9 @@ module FluxOnRails
         manifest
       end
       def add_react_form_builder
-        insert_into_file js_manifest, "//= require form-builder/form-for.react", :after => "react\n"
-        directory 'form-builder', 'vendor/assets/javascripts/form-builder'
+        insert_into_file js_manifest, "//= require form-for", :after => "react\n"
+        directory 'react-form-for-object', 'vendor/assets/javascripts/react-form-for-object'
+        copy_file 'form-for.js', 'vendor/assets/javascripts/form-for.js'
       end
       def add_react
         insert_into_file js_manifest, "//= require react", :after => "jquery_ujs\n"
