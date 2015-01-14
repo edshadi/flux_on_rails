@@ -37,7 +37,7 @@ module FluxOnRails
       end
       def add_flux_dirs
         directory 'components', 'app/assets/components'
-        directory 'components', 'app/assets/javascripts/components'
+        directory 'components', 'app/assets/javascripts/react'
         directory 'stores', 'app/assets/javascripts/stores'
         directory 'actions', 'app/assets/javascripts/actions'
         directory 'constants', 'app/assets/javascripts/constants'
