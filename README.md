@@ -28,13 +28,33 @@ Or install it yourself as:
 
 ## Usage
 
-```ruby
+```bash
 # Generate sturcture and assets
 rails g flux_on_rails:install
 
+# Install npm react tools
+npm install -g react-tools
+
 # Watch and transform the jsx components (keep that runing)
-rake react:build
+rake react:watch
+
+# Unfortunately, react tools npm tools adds trailing white space.
+# Use this task to clean up before you stage your files.
+
+rake react:clean
 ```
+
+## Workflow
+
+- watch your files with rake react:watch
+
+- do your React work under assets/components with .jsx file extensions
+
+- do your Flux work under assets/javascripts/actions assets/javascripts/constants assets/javascripts/stores assets/javascripts/dispatchers
+
+- don't do any work under assets/javascripts/react this folder is constantly being built from assets/components
+
+- use asset pipeline to your advantage. Use it to build modules that are aware of their own dependencies. Don't require directories, just files.
 
 ## Contributing
 
